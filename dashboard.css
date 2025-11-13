@@ -1,0 +1,145 @@
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: url("dashboard.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(200, 0, 100, 0.9);
+  padding: 10px 20px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  color: #c00064;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.dashboard {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.overlay h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.center-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  width: 300px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+}
+
+.center-search input {
+  border: none;
+  padding: 10px;
+  flex: 1;
+  font-size: 14px;
+  outline: none;
+}
+
+.center-search button {
+  background: none;
+  border: none;
+  color: #c00064;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.recommendation-bar {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 0;
+  border-top: 2px solid #c00064;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+}
+
+.bottom-nav button.active {
+  color: #c00064;
+}
+
+.bottom-nav button:hover {
+  color: #c00064;
+}
