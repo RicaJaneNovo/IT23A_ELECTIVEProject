@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -10,13 +9,20 @@ body {
   justify-content: space-between;
 }
 
-
+/* TOP NAVIGATION BAR */
 .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(200, 0, 100, 0.9);
   padding: 10px 20px;
+}
+
+.site-logo {
+  height: 40px;
+  border-radius: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .top-nav a {
@@ -62,7 +68,7 @@ body {
   cursor: pointer;
 }
 
-
+/* MAIN SECTION */
 .dashboard {
   flex: 1;
   display: flex;
@@ -118,7 +124,7 @@ body {
   display: inline-block;
 }
 
-
+/* BOTTOM NAVIGATION */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
