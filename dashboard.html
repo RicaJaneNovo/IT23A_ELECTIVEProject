@@ -9,7 +9,7 @@
 </head>
 <body>
 
- 
+  
   <header class="top-nav">
     <div class="nav-left">
       <img src="713034bf-6751-4516-8a46-33027b0c4782.jpeg" alt="Book Borrowing Logo" class="site-logo">
@@ -36,28 +36,88 @@
   </section>
 
   
-  <main class="dashboard">
+  <main id="home" class="section active">
     <div class="overlay">
       <h1>Borrow Now, Learn With Us</h1>
       <div class="center-search">
         <input type="text" placeholder="Search for books...">
         <button><i class="fa fa-search"></i></button>
       </div>
-
       <div class="recommendation-bar">
         Books recommendation, recently borrowed
       </div>
     </div>
   </main>
 
-  
+  <main id="library" class="section">
+    <div class="library-section">
+      <h2>Library</h2>
+      <div class="library-buttons">
+        <button>Current Read</button>
+        <button>Borrowed Books</button>
+        <button>Archive</button>
+        <button>Reading List</button>
+      </div>
+    </div>
+  </main>
+
+  <main id="schedule" class="section">
+    <div class="schedule-section">
+      <h2>Book Borrow Schedule</h2>
+      <ul>
+        <li>📚 Borrow “Java Fundamentals” — <b>Nov 20, 2025</b> at <b>Library Room 2</b></li>
+        <li>📖 Borrow “Python Basics” — <b>Nov 22, 2025</b> at <b>Computer Section</b></li>
+      </ul>
+    </div>
+  </main>
+
+  <main id="restrictions" class="section">
+    <div class="restriction-section">
+      <h2>Restriction Notice</h2>
+      <p>Note: If you’ve been restricted, you can’t borrow books for <b>3 days</b> due to not following the rules upon returning the book on your scheduled date.</p>
+    </div>
+  </main>
+
+  <main id="notifications" class="section">
+    <div class="notification-section">
+      <h2>Notifications</h2>
+      <ul>
+        <li>📢 New books added in Java section!</li>
+        <li>🕒 Reminder: Return borrowed books before deadline.</li>
+        <li>🎉 You earned a reading badge for completing 3 books!</li>
+      </ul>
+    </div>
+  </main>
+
+ 
   <footer class="bottom-nav">
-    <button><i class="fa fa-home"></i></button>
-    <button><i class="fa fa-lightbulb"></i></button>
-    <button class="active"><i class="fa fa-book"></i></button>
-    <button><i class="fa fa-ban"></i></button>
-    <button><i class="fa fa-bell"></i></button>
+    <button id="btnHome" class="active"><i class="fa fa-home"></i></button>
+    <button id="btnLibrary"><i class="fa fa-lightbulb"></i></button>
+    <button id="btnSchedule"><i class="fa fa-book"></i></button>
+    <button id="btnRestrictions"><i class="fa fa-ban"></i></button>
+    <button id="btnNotifications"><i class="fa fa-bell"></i></button>
   </footer>
+
+  <script>
+   
+
+    const sections = document.querySelectorAll('.section');
+    const buttons = document.querySelectorAll('.bottom-nav button');
+
+    function showSection(id) {
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn' + id.charAt(0).toUpperCase() + id.slice(1)).classList.add('active');
+    }
+
+    document.getElementById('btnHome').onclick = () => showSection('home');
+    document.getElementById('btnLibrary').onclick = () => showSection('library');
+    document.getElementById('btnSchedule').onclick = () => showSection('schedule');
+    document.getElementById('btnRestrictions').onclick = () => showSection('restrictions');
+    document.getElementById('btnNotifications').onclick = () => showSection('notifications');
+  </script>
 
 </body>
 </html>

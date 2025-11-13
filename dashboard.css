@@ -2,11 +2,26 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   color: #fff;
-  background: url("dashboard.jpg") no-repeat center center/cover;
+  background: url("https://i.pinimg.com/originals/7a/6f/6d/7a6f6d59439f70d72043c1f04ef25267.jpg") no-repeat center center/cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+}
+
+
+.section {
+  display: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.section.active {
+  display: flex;
 }
 
 
@@ -85,7 +100,6 @@ body {
   border-radius: 20px;
   padding: 10px 20px;
   font-weight: bold;
-  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -96,20 +110,6 @@ body {
   transform: translateY(-3px);
 }
 
-
-.dashboard {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  border-radius: 20px;
-}
 
 .overlay h1 {
   font-size: 28px;
@@ -150,6 +150,63 @@ body {
   padding: 10px 20px;
   font-weight: 500;
   display: inline-block;
+}
+
+
+.library-section h2 {
+  margin-bottom: 20px;
+}
+
+.library-buttons button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 15px;
+  color: #c00064;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.library-buttons button:hover {
+  background: #c00064;
+  color: #fff;
+}
+
+
+.schedule-section {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.schedule-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+
+.restriction-section {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 400px;
+}
+
+
+.notification-section {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.notification-section ul {
+  list-style: none;
+  text-align: left;
 }
 
 
