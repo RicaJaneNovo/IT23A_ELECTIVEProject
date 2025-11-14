@@ -1,114 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | Book Borrowing Tracker</title>
-  <link rel="stylesheet" href="dashboard.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BorrowNow Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script defer src="dashboard.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
+  <!-- 🌈 Background -->
+  <div class="background"></div>
 
-
-  <header class="top-nav">
-    <div class="nav-left">
-      <img src="713034bf-6751-4516-8a46-33027b0c4782.jpeg" alt="Logo" class="site-logo">
-      <a href="#">Tutorials</a>
-      <a href="#">References</a>
-      <a href="#">Exercise</a>
+  <!-- 🔝 Top Section -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="713034bf-6751-4516-8a46-33027b0c4782.jpeg" alt="Logo" />
+      <h1>BorrowNow</h1>
     </div>
-    <div class="nav-right">
+
+    <div class="search-container">
       <div class="search-bar">
-        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Search books, authors, topics..." />
         <button><i class="fa fa-search"></i></button>
       </div>
-      <button class="icon-btn"><i class="fa fa-user"></i></button>
-      <button class="icon-btn"><i class="fa fa-ellipsis-v"></i></button>
+    </div>
+
+    <div class="top-icons">
+      <i class="fa fa-user-circle profile-icon"></i>
+      <i class="fa fa-ellipsis-v menu-icon"></i>
     </div>
   </header>
 
- 
-  <section class="language-buttons">
-    <button>PYTHON</button>
-    <button>JAVA</button>
-    <button>C++</button>
-    <button>C</button>
-  </section>
-
-  
-  <main id="home" class="page active">
-    <div class="overlay">
-      <h1>Borrow Now, Learn With Us 📚</h1>
-      <div class="center-search">
-        <input type="text" placeholder="Search for books...">
-        <button><i class="fa fa-search"></i></button>
+  <!-- 📘 Main Content -->
+  <main>
+    <section id="home" class="page active fade-in">
+      <div class="welcome-card">
+        <h2>📚 Welcome to BorrowNow</h2>
+        <p>Explore, borrow, and manage your favorite books anytime.</p>
+        <div class="topics">
+          <button class="topic-btn">Python</button>
+          <button class="topic-btn">Java</button>
+          <button class="topic-btn">C++</button>
+          <button class="topic-btn">C Language</button>
+        </div>
       </div>
-      <div class="recommendation-bar">
-        <p>✨ Book Recommendations: Python Basics, C++ for Starters, Java 101</p>
-      </div>
-    </div>
-  </main>
+    </section>
 
-  <main id="library" class="page">
-    <div class="library-container">
+    <section id="library" class="page">
       <h2>📖 Your Library</h2>
-      <div class="library-tabs">
-        <button class="lib-btn active" data-tab="current">Current Read</button>
-        <button class="lib-btn" data-tab="borrowed">Borrowed Books</button>
-        <button class="lib-btn" data-tab="archive">Archive</button>
-        <button class="lib-btn" data-tab="reading">Reading List</button>
+      <div class="library-buttons">
+        <button>Current Read</button>
+        <button>Borrowed Books</button>
+        <button>Archive</button>
+        <button>Reading List</button>
       </div>
+    </section>
 
-      <div class="lib-content" id="current" style="display:block;">
-        <p>Currently reading: <b>"Java Fundamentals"</b></p>
-      </div>
-      <div class="lib-content" id="borrowed">
-        <p>You borrowed <b>"Python for Beginners"</b> — due back <b>Nov 25, 2025</b>.</p>
-      </div>
-      <div class="lib-content" id="archive">
-        <p>Archived Books: “C++ Basics”, “Data Structures in C”.</p>
-      </div>
-      <div class="lib-content" id="reading">
-        <p>Your reading list: “AI in Python”, “Mastering JavaFX”.</p>
-      </div>
-    </div>
-  </main>
-
-  <main id="schedule" class="page">
-    <div class="schedule-container">
+    <section id="schedule" class="page">
       <h2>📅 Book Schedule</h2>
-      <p>⏰ Borrow <b>"Python Basics"</b> — Nov 22, 2025, 10 AM, Computer Section</p>
-      <p>📍 Borrow <b>"C Programming 101"</b> — Nov 24, 2025, 1 PM, Main Library</p>
-    </div>
-  </main>
-
-  <main id="restrictions" class="page">
-    <div class="restriction-box">
-      <h2>🚫 Restriction Notice</h2>
-      <p>Note: If you’ve been restricted, you can’t borrow books for 3 days due to not returning on time. Please respect the schedule!</p>
-    </div>
-  </main>
-
-  <main id="notifications" class="page">
-    <div class="notification-box">
-      <h2>🔔 Notifications</h2>
-      <ul>
-        <li>🎉 You earned the “Fast Reader” badge!</li>
-        <li>📖 New book added: “Advanced Java OOP”.</li>
-        <li>⚠️ Reminder: Return "Python Basics" before Nov 25, 2025.</li>
+      <ul class="schedule-list">
+        <li><strong>Nov 14:</strong> Borrow “The Art of Coding” – 10:00 AM @ Main Library</li>
+        <li><strong>Nov 16:</strong> Return “Java Fundamentals” – 3:00 PM @ Room 202</li>
       </ul>
-    </div>
+    </section>
+
+    <section id="restrictions" class="page">
+      <div class="restriction-card">
+        <h2>🚫 Restriction Notice</h2>
+        <p>If you’ve been restricted you can’t borrow books in 3 days,
+        due you didn’t follow the rule upon returning the book
+        in their schedule.</p>
+        <div class="restriction-note">
+          <i class="fa fa-info-circle"></i>
+          <span>Please make sure to follow the return schedule to continue borrowing without delay.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="notifications" class="page">
+      <h2>🔔 Notifications</h2>
+      <ul class="notif-list">
+        <li>New books added: “AI & You” and “Dreams of Data.”</li>
+        <li>Your borrowed book “The Midnight Library” is due tomorrow.</li>
+        <li>Library update: New reading zones are now open!</li>
+      </ul>
+    </section>
   </main>
 
-  
-  <footer class="bottom-nav">
-    <button id="homeBtn" class="active"><i class="fa fa-home"></i><span>Home</span></button>
-    <button id="libraryBtn"><i class="fa fa-book"></i><span>Library</span></button>
-    <button id="scheduleBtn"><i class="fa fa-calendar"></i><span>Schedule</span></button>
-    <button id="restrictionsBtn"><i class="fa fa-ban"></i><span>Restrictions</span></button>
-    <button id="notificationsBtn"><i class="fa fa-bell"></i><span>Alerts</span></button>
-  </footer>
-
-  <script src="dashboard.js"></script>
+  <!-- 🔘 Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-page="home"><i class="fa fa-house"></i><span>Home</span></button>
+    <button class="nav-btn" data-page="library"><i class="fa fa-book"></i><span>Library</span></button>
+    <button class="nav-btn" data-page="schedule"><i class="fa fa-calendar"></i><span>Schedule</span></button>
+    <button class="nav-btn" data-page="restrictions"><i class="fa fa-ban"></i><span>Restrictions</span></button>
+    <button class="nav-btn" data-page="notifications"><i class="fa fa-bell"></i><span>Notifications</span></button>
+  </nav>
 </body>
 </html>
