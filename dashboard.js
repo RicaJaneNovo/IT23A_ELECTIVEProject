@@ -18,3 +18,36 @@ navButtons.forEach(button => {
     targetPage.classList.add("active");
   });
 });
+
+/* 🌸 PROFILE PAGE TAB SWITCHING */
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    tabButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const tab = btn.dataset.tab;
+    tabContents.forEach(content => content.classList.remove("active"));
+    document.getElementById(tab).classList.add("active");
+  });
+});
+
+/* 🌸 OPEN PROFILE WHEN ICON CLICKED */
+const profileIcon = document.querySelector(".profile-icon");
+
+profileIcon.addEventListener("click", () => {
+  pages.forEach(p => p.classList.remove("active"));
+  document.getElementById("profile").classList.add("active");
+
+  navButtons.forEach(btn => btn.classList.remove("active"));
+});
+
+/* 🌸 BACK BUTTON IN PROFILE */
+const backBtn = document.querySelector(".back-btn");
+
+backBtn.addEventListener("click", () => {
+  pages.forEach(p => p.classList.remove("active"));
+  document.getElementById("home").classList.add("active");
+});

@@ -197,3 +197,138 @@ body {
   transform: scale(1.05);
 }
 
+/* 🌸 PROFILE PAGE */
+.profile-container {
+  background: rgba(255,255,255,0.92);
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,128,191,0.3);
+}
+
+/* Back Arrow */
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #b30059;
+  cursor: pointer;
+}
+
+/* Settings Icon */
+.settings-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #b30059;
+  cursor: pointer;
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-pic {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border: 3px solid #ff80bf;
+  box-shadow: 0 0 15px rgba(255,128,191,0.4);
+}
+
+.username {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #4a0033;
+  font-weight: 600;
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #660033;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  color: #ff3399;
+  border-bottom: 3px solid #ff66b2;
+}
+
+/* Content Boxes */
+.tab-content {
+  display: none;
+  margin-top: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.about-card {
+  background: #ffe6f5;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #ff66b2;
+}
+
+.about-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #55002a;
+}
+
+.joined-date {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Reading List */
+.reading-title {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #700046;
+}
+
+.reading-list li {
+  font-size: 15px;
+  margin-top: 8px;
+  color: #440022;
+}
+
+/* Photos Grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,128,191,0.3);
+}
