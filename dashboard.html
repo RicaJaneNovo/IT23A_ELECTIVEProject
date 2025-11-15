@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BorrowNow Dashboard</title>
+
   <link rel="stylesheet" href="dashboard.css" />
   <script defer src="dashboard.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
+
   <!-- 🌈 Background -->
   <div class="background"></div>
 
-  <!-- 🔝 Top Section -->
+  <!-- 🔝 TOP BAR -->
   <header class="top-bar">
     <div class="logo">
       <img src="713034bf-6751-4516-8a46-33027b0c4782.jpeg" alt="Logo" />
@@ -33,12 +36,15 @@
     </div>
   </header>
 
-  <!-- 📘 Main Content -->
+  <!-- 📘 MAIN CONTENT -->
   <main>
+
+    <!-- HOME -->
     <section id="home" class="page active fade-in">
       <div class="welcome-card">
         <h2>📚 Welcome to Book Borrowing</h2>
         <p>Explore, borrow, and manage your favorite books anytime.</p>
+
         <div class="topics">
           <button class="topic-btn">Python</button>
           <button class="topic-btn">Java</button>
@@ -48,8 +54,10 @@
       </div>
     </section>
 
+    <!-- LIBRARY -->
     <section id="library" class="page">
       <h2>📖 Your Library</h2>
+
       <div class="library-buttons">
         <button>Current Read</button>
         <button>Borrowed Books</button>
@@ -58,6 +66,7 @@
       </div>
     </section>
 
+    <!-- SCHEDULE -->
     <section id="schedule" class="page">
       <h2>📅 Book Schedule</h2>
       <ul class="schedule-list">
@@ -66,30 +75,83 @@
       </ul>
     </section>
 
+    <!-- RESTRICTIONS -->
     <section id="restrictions" class="page">
       <div class="restriction-card">
         <h2>🚫 Restriction Notice</h2>
-        <p>If you’ve been restricted you can’t borrow books in 3 days,
-        due you didn’t follow the rule upon returning the book
-        in their schedule.</p>
+        <p>If you’ve been restricted, you can’t borrow books for 3 days
+          due to not following the return schedule.</p>
+
         <div class="restriction-note">
           <i class="fa fa-info-circle"></i>
-          <span>Please make sure to follow the return schedule to continue borrowing without delay.</span>
+          <span>Please follow the return rules to avoid future restrictions.</span>
         </div>
       </div>
     </section>
 
+    <!-- NOTIFICATIONS -->
     <section id="notifications" class="page">
       <h2>🔔 Notifications</h2>
+
       <ul class="notif-list">
-        <li>New book added for C language tutorial.</li>
-        <li>Your borrowed book “The Midnight Library” is due tomorrow.</li>
-        <li>Library update: New reading zones are now open!</li>
+        <li>New C Language tutorial book has been added.</li>
+        <li>Your book “The Midnight Library” is due tomorrow.</li>
+        <li>New reading zones are now open!</li>
       </ul>
     </section>
+
+    <!-- ⭐ PROFILE PAGE -->
+    <section id="profile" class="page">
+      <div class="profile-container fade-in">
+
+        <!-- BACK BUTTON -->
+        <button class="back-btn" data-page="home">
+          <i class="fa fa-arrow-left"></i>
+        </button>
+
+        <!-- SETTINGS BUTTON -->
+        <button class="settings-btn">
+          <i class="fa fa-gear"></i>
+        </button>
+
+        <!-- PROFILE HEADER -->
+        <div class="profile-header">
+          <img src="https://i.imgur.com/0y8Ftya.png" class="profile-pic" alt="User">
+          <p class="username">@ricajanenovo</p>
+        </div>
+
+        <!-- TABS -->
+        <div class="profile-tabs">
+          <button class="tab-btn active" data-tab="about">ABOUT</button>
+          <button class="tab-btn" data-tab="photos">PHOTOS</button>
+        </div>
+
+        <!-- ABOUT TAB -->
+        <div id="about" class="tab-content active">
+          <div class="about-card">
+            <p class="about-title">Tell Us About Yourself</p>
+            <p class="joined-date">Joined Oct 12, 2025</p>
+          </div>
+
+          <h3 class="reading-title">Reading Lists</h3>
+          <ul class="reading-list">
+            <li>• The Art of Coding</li>
+            <li>• Java Fundamentals</li>
+            <li>• Midnight Library</li>
+          </ul>
+        </div>
+
+        <!-- PHOTOS TAB -->
+        <div id="photos" class="tab-content">
+          <p>No photos uploaded yet.</p>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- 🔘 Bottom Navigation -->
+  <!-- 🔘 BOTTOM NAVIGATION -->
   <nav class="bottom-nav">
     <button class="nav-btn active" data-page="home"><i class="fa fa-house"></i><span>Home</span></button>
     <button class="nav-btn" data-page="library"><i class="fa fa-book"></i><span>Library</span></button>
@@ -97,58 +159,6 @@
     <button class="nav-btn" data-page="restrictions"><i class="fa fa-ban"></i><span>Restrictions</span></button>
     <button class="nav-btn" data-page="notifications"><i class="fa fa-bell"></i><span>Notifications</span></button>
   </nav>
+
 </body>
 </html>
-
-<!-- 🌸 USER PROFILE PAGE -->
-<section id="profile" class="page">
-  <div class="profile-container fade-in">
-
-    <!-- Back Arrow -->
-    <button class="back-btn" data-page="home">
-      <i class="fa fa-arrow-left"></i>
-    </button>
-
-    <!-- Settings Icon -->
-    <button class="settings-btn">
-      <i class="fa fa-gear"></i>
-    </button>
-
-    <!-- Profile Picture + Name -->
-    <div class="profile-header">
-      <img src="https://i.imgur.com/0y8Ftya.png" class="profile-pic" alt="User Picture">
-      <p class="username">@ricajanenovo</p>
-    </div>
-
-    <!-- Tabs -->
-    <div class="profile-tabs">
-      <button class="tab-btn active" data-tab="about">ABOUT</button>
-      <button class="tab-btn" data-tab="photos">PHOTOS</button>
-    </div>
-
-    <!-- ABOUT Content -->
-    <div id="about" class="tab-content active">
-      <div class="about-card">
-        <p class="about-title">Tell Us About Yourself</p>
-        <p class="joined-date">Joined Oct 12, 2025</p>
-      </div>
-
-      <h3 class="reading-title">Reading Lists</h3>
-      <ul class="reading-list">
-        <li>• The Art of Coding</li>
-        <li>• Java Fundamentals</li>
-        <li>• Midnight Library</li>
-      </ul>
-    </div>
-
-    <!-- PHOTOS Content -->
-    <div id="photos" class="tab-content">
-      <div class="photo-grid">
-        <img src="https://www.google.com/imgres?q=cute%20anime%20girls%20for%20wallpaper&imgurl=https%3A%2F%2Fwallpapers.com%2Fimages%2Ffeatured%2Fcute-anime-uptxxcxl4h2zoe9r.jpg&imgrefurl=https%3A%2F%2Fwallpapers.com%2Fcute-anime&docid=lHWv_zRI1k_YjM&tbnid=0fJ-vwnM30V4xM&vet=12ahUKEwit1KC45vGQAxWzevUHHSipEpIQM3oECBkQAA..i&w=1920&h=1920&hcb=2&ved=2ahUKEwit1KC45vGQAxWzevUHHSipEpIQM3oECBkQAA">
-        <img src="https://www.google.com/imgres?q=cute%20anime%20girls%20for%20wallpaper&imgurl=https%3A%2F%2Fcdn.wallpapersafari.com%2F54%2F95%2FRLOk4v.jpg&imgrefurl=https%3A%2F%2Fwallpapersafari.com%2Fcute-blue-anime-girl-wallpapers%2F&docid=BvysC_FHg4LZMM&tbnid=Zh1EY87IiT5kiM&vet=12ahUKEwit1KC45vGQAxWzevUHHSipEpIQM3oECCgQAA..i&w=720&h=1279&hcb=2&ved=2ahUKEwit1KC45vGQAxWzevUHHSipEpIQM3oECCgQAA">
-        <img src="https://www.google.com/imgres?q=cute%20anime%20girls%20for%20wallpaper&imgurl=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fside-view-anime-girl-hugging-cat_23-2150970941.jpg%3Fw%3D360&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fcute-anime-girl-wallpaper&docid=LJFjgmszY6dGhM&tbnid=02kXrViTHPuBrM&vet=12ahUKEwit1KC45vGQAxWzevUHHSipEpIQM3oECCkQAA..i&w=360&h=202&hcb=2&ved=2ahUKEwit1KC45vGQAxWzevUHHSipEpIQM3oECCkQAA">
-      </div>
-    </div>
-
-  </div>
-</section>
