@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
- 
-    
+  // Sign up confirmation
   const signupBtn = document.getElementById("signupBtn");
   if (signupBtn) {
     signupBtn.addEventListener("click", () => {
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
- 
+  // Login simulation
   const loginBtn = document.getElementById("loginBtn");
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
+  // Google login simulation
   const googleBtn = document.getElementById("googleBtn");
   if (googleBtn) {
     googleBtn.addEventListener("click", () => {
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
+  // Dashboard interactions
   const returnBtns = document.querySelectorAll(".return-btn");
   returnBtns.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
+  // Logout
   const logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
