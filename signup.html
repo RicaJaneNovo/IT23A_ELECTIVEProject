@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | Book Borrowing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+
+  <div class="auth-container">
+    <img src="713034bf-6751-4516-8a46-33027b0c4782.jpeg" alt="Book Borrowing Logo" class="auth-logo">
+    <h1>Create Account</h1>
+
+    <form id="signupForm">
+      <input type="text" placeholder="Username" required><br>
+      <input type="email" placeholder="Email" required><br>
+      <input type="text" placeholder="Address" required><br>
+      <input type="text" placeholder="ID Number" required><br>
+      <input type="password" placeholder="Password" required><br>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Back to login</a></p>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert("You've been successfully have an account my dear user 💖");
+      window.location.href = 'login.html';
+    });
+  </script>
+
+</body>
+</html>

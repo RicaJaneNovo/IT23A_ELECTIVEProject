@@ -1,0 +1,66 @@
+body.auth-page {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #c00064, #400060);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.auth-container h1 {
+  margin-bottom: 10px;
+}
+
+.auth-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.auth-container button {
+  background: #fff;
+  color: #c00064;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.auth-container button:hover {
+  background: #c00064;
+  color: white;
+}
+
+.google-btn {
+  background: white;
+  color: #000;
+  margin-top: 5px;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.auth-logo {
+  width: 120px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
