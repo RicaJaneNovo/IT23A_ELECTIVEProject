@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Borrowing</title>
+
+    <link rel="stylesheet" href="dashboard.css" />
+    <script defer src="dashboard.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="background"></div> 
+
+    <section id="login-page" class="page active login-screen">
+        <div class="login-card">
+            <h1>Borrow Now</h1>
+            <p>Borrow Now, Learn With Us.</p>
+            <button class="login-btn" data-action="login">Log In / Sign Up</button>
+            <p class="small-text">Click the button to continue to the dashboard.</p>
+        </div>
+    </section>
+    
+    <div id="app-container" class="hidden-app">
+        
+        <header class="top-bar">
+            <div class="logo">
+                <img src="713034bf-6751-4516-8a46-33027b0c4782.jpeg" alt="Book Borrowing Logo" class="logo-img" />
+                <h1>Book Borrowing</h1>
+            </div>
+
+            <div class="search-container">
+                <div class="search-bar">
+                    <input id="mainSearch" type="text" placeholder="Search books, authors, topics..." />
+                    <button aria-label="Search"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="top-icons">
+                <button class="icon-btn three-dots" title="Borrowing notes" aria-label="Borrowing notes">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+                <button class="icon-btn profile-icon" title="Profile" aria-label="Profile">
+                    <i class="fa fa-user-circle"></i>
+                </button>
+
+                <button class="icon-btn settings-icon" title="Settings (quick)" aria-label="Settings (quick)">
+                    <i class="fa fa-gear"></i>
+                </button>
+
+                <button class="theme-toggle" title="Toggle theme">
+                    <i class="fa fa-moon"></i>
+                </button>
+            </div>
+
+            <div id="borrowNotesDropdown" class="dropdown-box" aria-hidden="true">
+                <h4>📚 Steps For Borrowing Books</h4>
+                <p>1. Search for the book online or in the library's catalog; if unavailable, place a hold.</p>
+                <p>2. Enter your ID number when prompted on the website.</p>
+                <p>3. Search and reserve the book after logging in.</p>
+                <p>4. Check borrow and return dates on the site.</p>
+                <p><b>That’s all my dear user — enjoy reading and learn! 💖</b></p>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Borrow Now — Learn With Us</h1>
+            <div class="search-box">
+                <input id="heroSearch" type="text" placeholder="Search books, authors, topics..." />
+            </div>
+        </section>
+
+        <main>
+            <section id="home" class="page fade-in"> 
+                <div class="welcome-card">
+                    <h2>📚 Welcome to Book Borrowing</h2>
+
+                    <p>Explore, borrow, and manage your favorite books anytime.</p>
+
+                    <div class="topics">
+                        <button class="topic-btn">Python</button>
+                        <button class="topic-btn">Java</button>
+                        <button class="topic-btn">C++</button>
+                    <button class="topic-btn" id="openCLanguage">C Language</button>
+        </div>
+      </div>
+    </section>
+
+ 
+    <section id="cLanguage" class="page">
+      <button class="back-btn" data-back="home">
+        <i class="fa fa-arrow-left"></i>
+      </button>
+
+      <h2 class="section-title">👨‍🏫 C Language Authors</h2>
+
+      <div class="author-list" id="authorList"></div>
+    </section>
+
+    <section id="authorBooks" class="page">
+      <button class="back-btn" id="backToAuthors">
+        <i class="fa fa-arrow-left"></i>
+      </button>
+
+      <h2 class="section-title" id="authorNameTitle"></h2>
+
+      <ul class="book-list" id="booksContainer"></ul>
+    </section>
+
+  </main>
+            <section id="library" class="page">
+                <h2>📖 Your Library</h2>
+                <div class="library-buttons">
+                    <button>Current Read</button>
+                    <button>Borrowed Books</button>
+                    <button>Archive</button>
+                    <button>Reading List</button>
+                </div>
+            </section>
+
+            <section id="schedule" class="page">
+                <h2>📅 Book Schedule</h2>
+                <ul class="schedule-list">
+                    <li><strong>Nov 14:</strong> Borrow “The Art of Coding” – 10:00 AM @ Main Library</li>
+                    <li><strong>Nov 16:</strong> Return “Java Fundamentals” – 3:00 PM @ Room 202</li>
+                </ul>
+            </section>
+
+            <section id="restrictions" class="page">
+                <div class="restriction-card">
+                    <h2>🚫 Restriction Notice</h2>
+
+                    <p>If you’ve been restricted you can’t borrow books in 3 days because
+                        you didn’t follow the rule upon returning the book on schedule.</p>
+
+                    <div class="restriction-note">
+                        <i class="fa fa-info-circle"></i>
+                        <span>Please make sure to follow the return schedule to continue borrowing without delay.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="notifications" class="page">
+                <h2>🔔 Notifications</h2>
+
+                <ul class="notif-list">
+                    <li>New books added: “AI & You” and “Dreams of Data.”</li>
+                    <li>Your borrowed book “The Midnight Library” is due tomorrow.</li>
+                    <li>Library update: New reading zones are now open!</li>
+                </ul>
+            </section>
+
+
+            <section id="profile" class="page">
+                <div class="profile-container fade-in">
+                    <button class="back-btn" data-target="home">←</button>
+
+                    <div class="profile-header">
+                        <img src="713034bf-6751-4516-8a46-33027b0c4782.jpeg" class="profile-pic" alt="User">
+                        <h2 class="profile-title">Profile</h2>
+                        <p class="username">@ricajanenovo</p>
+                    </div>
+
+                    <div class="profile-tabs">
+                        <button class="tab-btn active" data-tab="about">ABOUT</button>
+                        <button class="tab-btn" data-tab="photos">PHOTOS</button>
+                    </div>
+
+                    <div id="about" class="tab-content active">
+                        <div class="about-card">
+                            <p class="about-title">Tell Us About Yourself</p>
+                            <p class="joined-date">Joined Oct 12, 2025</p>
+                        </div>
+
+                        <h3 class="reading-title">Reading Lists</h3>
+                        <ul class="reading-list">
+                            <li>The Art of Coding</li>
+                            <li>Java Fundamentals</li>
+                            <li>Midnight Library</li>
+                        </ul>
+                    </div>
+
+                    <div id="photos" class="tab-content">
+                        <div class="photo-grid">
+                            <img src="https://i.imgur.com/HY9l8pH.jpeg" alt="Book cover 1">
+                            <img src="https://i.imgur.com/KVtFv3D.jpeg" alt="Book cover 2">
+                            <img src="https://i.imgur.com/PLlnqOj.jpeg" alt="Book cover 3">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings" class="page">
+                <button class="back-btn" data-target="profile">←</button>
+                <h2 class="settings-title">Settings</h2>
+
+                <div class="settings-section">
+                    <h3>PROFILE & ACCOUNT</h3>
+                    <div class="settings-item" data-open="profileAccount">
+                        <span>Profile & Account</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>PRIVACY & SAFETY</h3>
+                    <div class="settings-item" data-open="mutedAccounts">
+                        <span>Muted Accounts</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="settings-item" data-open="blockedAccounts">
+                        <span>Blocked Accounts</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>PREFERRED LANGUAGE</h3>
+                    <div class="settings-item" data-open="preferredLanguage">
+                        <span>Book Language<br><small>English</small></span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>OTHER</h3>
+                    <div class="settings-item" data-open="aboutApp">
+                        <span>About Book Borrowing</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="settings-item" data-open="helpSupport">
+                        <span>Help & Support</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+
+                <button class="logout-btn">Log Out</button>
+            </section>
+
+            <section id="profileAccount" class="page subpage">
+                <button class="back-btn sub-back" data-target="settings">←</button>
+                <h2>Profile & Account</h2>
+
+                <div class="about-card">
+                    <label>Username</label>
+                    <input class="form-input" type="text" value="@ricajanenovo" />
+                    <label>Full name</label>
+                    <input class="form-input" type="text" value="Rica Jane Novo" />
+                    <label>Student ID</label>
+                    <input class="form-input" type="text" value="2025-0001" />
+                    <label>Preferred Gender</label>
+                    <select class="form-input">
+                        <option>He</option>
+                        <option>She</option>
+                        <option>Prefer not to say</option>
+                    </select>
+
+                    <h4>Social accounts</h4>
+                    <div class="settings-item social">
+                        <span>Connect Facebook</span>
+                        <button class="small-btn">Connect</button>
+                    </div>
+                    <div class="settings-item social">
+                        <span>Connect Google</span>
+                        <button class="small-btn">Connect</button>
+                    </div>
+
+                    <h4>ACCOUNT SETTINGS</h4>
+                    <p class="muted-note">The information you enter here will not be visible to other users.</p>
+
+                    <label>Email</label>
+                    <input class="form-input" type="email" value="example@school.edu" />
+                    <label>Password</label>
+                    <input class="form-input" type="password" value="password" />
+                    <a class="muted-link" href="#">Forgot password?</a>
+
+                    <label>Birthday</label>
+                    <input class="form-input" type="date" value="2004-01-01" />
+
+                    <button class="danger-btn">Delete account</button>
+                </div>
+            </section>
+
+            <section id="mutedAccounts" class="page subpage">
+                <button class="back-btn sub-back" data-target="settings">←</button>
+                <h2>Muted Accounts</h2>
+                <div class="about-card">
+                    <p id="mutedListNote">You aren't muting anyone.</p>
+                    <ul id="mutedList" class="muted-list"></ul>
+                </div>
+            </section>
+
+            <section id="blockedAccounts" class="page subpage">
+                <button class="back-btn sub-back" data-target="settings">←</button>
+                <h2>Blocked Accounts</h2>
+                <div class="about-card">
+                    <p id="blockedListNote">You didn't block any account.</p>
+                    <ul id="blockedList" class="muted-list"></ul>
+                </div>
+            </section>
+
+            <section id="preferredLanguage" class="page subpage">
+                <button class="back-btn sub-back" data-target="settings">←</button>
+                <h2>Preferred Language</h2>
+                <div class="about-card">
+                    <label><input type="radio" name="lang" value="English" checked> English</label><br>
+                    <label><input type="radio" name="lang" value="Tagalog"> Tagalog</label><br>
+                    <label><input type="radio" name="lang" value="Bisaya"> Bisaya</label>
+                </div>
+            </section>
+
+            <section id="aboutApp" class="page subpage">
+                <button class="back-btn sub-back" data-target="settings">←</button>
+                <h2>About Book Borrowing</h2>
+                <div class="about-card">
+                    <p><strong>Book Borrowing</strong></p>
+                    <p>@2025 Book Borrowing</p>
+                    <p>Book Borrowing is for students who want to borrow books online so they won't miss the books they want from the NBSC library. They can also view and download books.</p>
+                </div>
+            </section>
+
+            <section id="helpSupport" class="page subpage">
+                <button class="back-btn sub-back" data-target="settings">←</button>
+                <h2>Help & Support</h2>
+                <div class="about-card">
+                    <p>What do you need help with?</p>
+                    <button id="contactUsBtn" class="small-btn">Contact us here</button>
+                </div>
+            </section>
+
+            <section id="contactPage" class="page subpage">
+                <button class="back-btn sub-back" data-target="helpSupport">←</button>
+                <h2>Contact</h2>
+                <div class="about-card">
+                    <ul>
+                        <li>ricajanenovo88@gmail.com</li>
+                        <li>dalahigonqueen@gmail.com</li>
+                        <li>ranichellcompendio07@gmail.com</li>
+                        <li>annabellasuposo2006@gmail.com</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-page="home"><i class="fa fa-house"></i><span>Home</span></button>
+            <button class="nav-btn" data-page="library"><i class="fa fa-book"></i><span>Library</span></button>
+            <button class="nav-btn" data-page="schedule"><i class="fa fa-calendar"></i><span>Schedule</span></button>
+            <button class="nav-btn" data-page="restrictions"><i class="fa fa-ban"></i><span>Restrictions</span></button>
+            <button class="nav-btn" data-page="notifications"><i class="fa fa-bell"></i><span>Notifications</span></button>
+        </nav>
+
+    </div> </body>
+</html>
