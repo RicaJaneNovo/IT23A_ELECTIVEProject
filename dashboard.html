@@ -32,12 +32,14 @@
                 <h1>Book Borrowing</h1>
             </div>
 
-            <div class="search-container">
-                <div class="search-bar">
-                    <input id="mainSearch" type="text" placeholder="Search books, authors, topics..." />
-                    <button aria-label="Search"><i class="fa fa-search"></i></button>
-                </div>
+             <div class="search-bar">
+               <input id="mainSearch" type="text">
+               <button><i class="fa fa-search"></i></button>
             </div>
+
+            <input type="text" id="mainSearch" placeholder="Search books...">
+           <button id="mainSearchBtn">Search</button>
+
 
             <div class="top-icons">
                 <button class="icon-btn three-dots" title="Borrowing notes" aria-label="Borrowing notes">
@@ -153,6 +155,9 @@
                     <button>Archive</button>
                     <button>Reading List</button>
                 </div>
+                <div id="searchResults" class="search-results"></div>
+
+
             </section>
 
             <section id="schedule" class="page">
@@ -376,7 +381,7 @@
                     </ul>
                 </div>
             </section>
-            
+
         </main>
 
         <!-- BOTTOM NAV -->
