@@ -13,6 +13,7 @@
 <body>
     <div class="background"></div> 
 
+    <!-- LOGIN PAGE -->
     <section id="login-page" class="page active login-screen">
         <div class="login-card">
             <h1>Borrow Now</h1>
@@ -24,6 +25,7 @@
     
     <div id="app-container" class="hidden-app">
         
+        <!-- HEADER -->
         <header class="top-bar">
             <div class="logo">
                 <img src="img/logo.jpg" alt="Book Borrowing Logo" class="logo-img" />
@@ -65,6 +67,7 @@
             </div>
         </header>
 
+        <!-- HERO SECTION -->
         <section class="hero">
             <h1>Borrow Now — Learn With Us</h1>
             <div class="search-box">
@@ -73,43 +76,75 @@
         </section>
 
         <main>
+
+            <!-- HOME PAGE -->
             <section id="home" class="page fade-in"> 
                 <div class="welcome-card">
                     <h2>📚 Welcome to Book Borrowing</h2>
-
                     <p>Explore, borrow, and manage your favorite books anytime.</p>
 
                     <div class="topics">
-                        <button class="topic-btn">Python</button>
-                        <button class="topic-btn">Java</button>
-                        <button class="topic-btn">C++</button>
-                    <button class="topic-btn" id="openCLanguage">C Language</button>
-        </div>
-      </div>
-    </section>
+                        <button class="topic-btn" id="openPythonLanguage">Python</button>
+                        <button class="topic-btn" id="openJavaLanguage">Java</button>
+                        <button class="topic-btn" id="openCppLanguage">C++</button>
+                        <button class="topic-btn" id="openCLanguage">C Language</button>
+                    </div>
+                </div>
+            </section>
 
- 
-    <section id="cLanguage" class="page">
-      <button class="back-btn" data-back="home">
-        <i class="fa fa-arrow-left"></i>
-      </button>
+            <!-- C LANGUAGE -->
+            <section id="cLanguage" class="page">
+                <button class="back-btn" data-back="home"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title">👨‍🏫 C Language Authors</h2>
+                <div class="author-list" id="authorList"></div>
+            </section>
 
-      <h2 class="section-title">👨‍🏫 C Language Authors</h2>
+            <section id="authorBooks" class="page">
+                <button class="back-btn" id="backToAuthors"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title" id="authorNameTitle"></h2>
+                <ul class="book-list" id="booksContainer"></ul>
+            </section>
 
-      <div class="author-list" id="authorList"></div>
-    </section>
+            <!-- JAVA LANGUAGE -->
+            <section id="javaLanguage" class="page">
+                <button class="back-btn" data-back="home"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title">☕ Java Authors</h2>
+                <div class="author-list" id="javaAuthorList"></div>
+            </section>
 
-    <section id="authorBooks" class="page">
-      <button class="back-btn" id="backToAuthors">
-        <i class="fa fa-arrow-left"></i>
-      </button>
+            <section id="javaBooksPage" class="page">
+                <button class="back-btn" id="backToJavaAuthors"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title" id="javaAuthorTitle"></h2>
+                <ul class="book-list" id="javaBooksContainer"></ul>
+            </section>
 
-      <h2 class="section-title" id="authorNameTitle"></h2>
+            <!-- C++ LANGUAGE -->
+            <section id="cppLanguage" class="page">
+                <button class="back-btn" data-back="home"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title">👨‍🏫 C++ Authors</h2>
+                <div class="author-list" id="cppAuthorList"></div>
+            </section>
 
-      <ul class="book-list" id="booksContainer"></ul>
-    </section>
+            <section id="cppBooksPage" class="page">
+                <button class="back-btn" id="backToCppAuthors"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title" id="cppAuthorTitle"></h2>
+                <ul class="book-list" id="cppBooksContainer"></ul>
+            </section>
 
-  </main>
+            <!-- PYTHON LANGUAGE -->
+            <section id="pythonLanguage" class="page">
+                <button class="back-btn" data-back="home"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title">🐍 Python Authors</h2>
+                <div class="author-list" id="pythonAuthorList"></div>
+            </section>
+
+            <section id="pythonBooksPage" class="page">
+                <button class="back-btn" id="backToPythonAuthors"><i class="fa fa-arrow-left"></i></button>
+                <h2 class="section-title" id="pythonAuthorTitle"></h2>
+                <ul class="book-list" id="pythonBooksContainer"></ul>
+            </section>
+
+            <!-- LIBRARY, SCHEDULE, RESTRICTIONS, NOTIFICATIONS (UNCHANGED) -->
             <section id="library" class="page">
                 <h2>📖 Your Library</h2>
                 <div class="library-buttons">
@@ -131,10 +166,8 @@
             <section id="restrictions" class="page">
                 <div class="restriction-card">
                     <h2>🚫 Restriction Notice</h2>
-
                     <p>If you’ve been restricted you can’t borrow books in 3 days because
                         you didn’t follow the rule upon returning the book on schedule.</p>
-
                     <div class="restriction-note">
                         <i class="fa fa-info-circle"></i>
                         <span>Please make sure to follow the return schedule to continue borrowing without delay.</span>
@@ -144,7 +177,6 @@
 
             <section id="notifications" class="page">
                 <h2>🔔 Notifications</h2>
-
                 <ul class="notif-list">
                     <li>New books added: “AI & You” and “Dreams of Data.”</li>
                     <li>Your borrowed book “The Midnight Library” is due tomorrow.</li>
@@ -152,8 +184,7 @@
                 </ul>
             </section>
 
-
-            <section id="profile" class="page">
+             <section id="profile" class="page">
                 <div class="profile-container fade-in">
                     <button class="back-btn" data-target="home">←</button>
 
@@ -345,9 +376,10 @@
                     </ul>
                 </div>
             </section>
-
+            
         </main>
 
+        <!-- BOTTOM NAV -->
         <nav class="bottom-nav">
             <button class="nav-btn active" data-page="home"><i class="fa fa-house"></i><span>Home</span></button>
             <button class="nav-btn" data-page="library"><i class="fa fa-book"></i><span>Library</span></button>
@@ -356,5 +388,6 @@
             <button class="nav-btn" data-page="notifications"><i class="fa fa-bell"></i><span>Notifications</span></button>
         </nav>
 
-    </div> </body>
+    </div>
+</body>
 </html>
