@@ -1,11 +1,10 @@
-/* ============== dashboard.js - CONSOLIDATED & ENHANCED =============== */
+/* ============== dashboard.js - FIXED & CLEANED VERSION =============== */
 
 /* NEW: APP FLOW ELEMENTS */
 const loginPage = document.getElementById('login-page');
 const appContainer = document.getElementById('app-container');
 const loginButton = document.querySelector('.login-btn');
 const logoutButton = document.querySelector('.logout-btn');
-
 
 /* THEME TOGGLE */
 const toggleBtn = document.querySelector('.theme-toggle');
@@ -14,51 +13,42 @@ if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         const icon = toggleBtn.querySelector('i');
-        if (body.classList.contains('dark-mode')) {
-            if (icon) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        } else {
-            if (icon) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+        if (icon) {
+            icon.classList.toggle('fa-sun');
+            icon.classList.toggle('fa-moon');
         }
     });
 }
 
-/* MAIN NAV (bottom nav) & PAGE SWITCHING LOGIC */
+/* MAIN NAV (bottom nav) */
 const navButtons = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page, .subpage');
 
-/** PAGE SWITCHER — used everywhere */
+/* PAGE SWITCHER */
 function switchTo(targetId) {
     pages.forEach(p => p.classList.remove('active'));
+
     const el = document.getElementById(targetId);
     if (el) el.classList.add('active');
 
-    // Update bottom nav active state (only main pages)
+    // update bottom nav (only main pages)
     navButtons.forEach(btn => btn.classList.remove('active'));
+
     const mainPageBtn = document.querySelector(`.nav-btn[data-page="${targetId}"]`);
-    if (mainPageBtn) {
-        mainPageBtn.classList.add('active');
-    }
+    if (mainPageBtn) mainPageBtn.classList.add('active');
 }
 
 // Bottom nav clicks
 navButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        switchTo(btn.dataset.page);
-    });
+    btn.addEventListener('click', () => switchTo(btn.dataset.page));
 });
 
-/* PROFILE/SETTINGS PAGE NAVIGATION */
+/* PROFILE / SETTINGS NAVIGATION */
 const profileIcon = document.querySelector(".profile-icon");
 if (profileIcon) {
     profileIcon.addEventListener("click", () => {
         switchTo("profile");
-        navButtons.forEach(btn => btn.classList.remove("active")); 
+        navButtons.forEach(btn => btn.classList.remove("active"));
     });
 }
 
@@ -73,11 +63,9 @@ document.querySelectorAll('.back-btn').forEach(btn => {
     });
 });
 
-// Settings subpages
+// Settings → subpages
 document.querySelectorAll('.settings-item[data-open]').forEach(item => {
-    item.addEventListener('click', () => {
-        switchTo(item.dataset.open);
-    });
+    item.addEventListener('click', () => switchTo(item.dataset.open));
 });
 
 /* PROFILE/SETTINGS TABS */
@@ -89,6 +77,7 @@ tabButtons.forEach(btn => {
         tabButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         tabContents.forEach(c => c.classList.remove('active'));
+
         const target = document.getElementById(btn.dataset.tab);
         if (target) target.classList.add('active');
     });
@@ -100,6 +89,7 @@ if (contactBtn) contactBtn.addEventListener('click', () => switchTo('contactPage
 /* Three-dots dropdown */
 const threeDots = document.querySelector('.three-dots');
 const dropdown = document.getElementById('borrowNotesDropdown');
+
 if (threeDots && dropdown) {
     threeDots.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -107,9 +97,11 @@ if (threeDots && dropdown) {
         document.querySelectorAll('.dropdown-box').forEach(d => d.style.display = 'none');
         dropdown.style.display = shown ? 'none' : 'block';
     });
+
     document.addEventListener('click', (e) => {
-        if (!threeDots.contains(e.target) && !dropdown.contains(e.target))
+        if (!threeDots.contains(e.target) && !dropdown.contains(e.target)) {
             dropdown.style.display = 'none';
+        }
     });
 }
 
@@ -151,16 +143,16 @@ function renderLists() {
 // Unmute/Unblock handler
 document.addEventListener('click', e => {
     const btn = e.target;
-    if (btn.classList.contains('small-btn') && btn.dataset.action) {
+    if (btn.classList.contains('small-btn')) {
         alert(`Request to ${btn.dataset.action} ${btn.dataset.user} sent!`);
     }
 });
 
-/* Topic buttons — except C Language (we override it below) */
+/* Topic buttons — (except C Language) */
 document.querySelectorAll('.topic-btn').forEach(btn => {
     if (btn.id !== "openCLanguage") {
         btn.addEventListener('click', () => {
-            console.log(`Topic selected: ${btn.textContent.trim()}. Staying on home page.`);
+            console.log(`Topic selected: ${btn.textContent.trim()}.`);
         });
     }
 });
@@ -170,19 +162,81 @@ const heroSearch = document.getElementById('heroSearch');
 const mainSearch = document.getElementById('mainSearch');
 
 [heroSearch, mainSearch].forEach(inp => {
-    if (!inp) return;
-    inp.addEventListener('keydown', e => {
-        if (e.key === 'Enter') switchTo('library');
-    });
+    if (inp) {
+        inp.addEventListener('keydown', e => {
+            if (e.key === 'Enter') switchTo('library');
+        });
+    }
 });
 
+/* ======================================================
+                C LANGUAGE BOOK LINKS
+   ====================================================== */
+const bookLinks = {
+
+     "The C Programming Language, 1st Edition (1978)": "https://archive.org/details/cprogramminglang00ritc",
+    "The C Programming Language, 2nd Edition (1988)": "https://www.amazon.com/C-Programming-Language-2nd/dp/0131103628",
+    "The Unix Programming Environment (1983)": "https://archive.org/details/unixprogramminge00kern",
+    "The Practice of Programming (1999)": "https://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X",
+    "Software Tools (1976)": "https://archive.org/details/softwaretools00kern",
+    "The Elements of Programming Style (1974)": "https://archive.org/details/elementsofprogra0000kern",
+    "Software Tools in Pascal (1986)": "https://archive.org/details/softwaretoolsinp00kern",
+    "The AWK Programming Language (1988)": "https://awk.dev/",
+    "Understanding the Digital World (2017)": "https://press.princeton.edu/books/hardcover/9780691177135/understanding-the-digital-world",
+    "UNIX: A History and a Memoir (2019)": "https://www.amazon.com/UNIX-History-Memoir-Brian-Kernighan/dp/1695978552",
+
+    "C: The Complete Reference": "https://www.amazon.com/C-Complete-Reference-Herbert-Schildt/dp/0072121246",
+    "C++: The Complete Reference": "https://www.amazon.com/C-Complete-Reference-Herbert-Schildt/dp/0072226803",
+    "Java: The Complete Reference": "https://www.amazon.com/Java-Complete-Reference-Herbert-Schildt/dp/1260440230",
+    "C#: The Complete Reference": "https://www.amazon.com/Complete-Reference-Herbert-Schildt/dp/0071588415",
+    "Python: The Complete Reference": "https://www.amazon.com/Python-Complete-Reference-Martin-Brown/dp/1260440214",
+    "HTML & CSS: The Complete Reference": "https://www.amazon.com/HTML-CSS-Complete-Reference-Fifth/dp/0071496297",
+    "JavaScript: The Complete Reference": "https://www.amazon.com/JavaScript-Complete-Reference-Third-Developers/dp/0071741300",
+    "Born to Code in C": "https://www.goodreads.com/book/show/3513474-born-to-code-in-c",
+    "Teach Yourself C++": "https://www.amazon.com/Sams-Teach-Yourself-Hours-Programming/dp/0672333317",
+    "The Art of Java": "https://www.goodreads.com/book/show/1260803.The_Art_of_Java",
+
+    "C Primer Plus, 5th Edition": "https://www.amazon.com/C-Primer-Plus-5th-Developers/dp/0672326965",
+    "C Primer Plus, 6th Edition": "https://www.amazon.com/C-Primer-Plus-6th-Developers/dp/0321928423",
+    "C++ Primer Plus, 6th Edition": "https://www.amazon.com/C-Primer-Plus-6th-Developers/dp/0321776402",
+    "New C++ Primer Plus": "https://www.goodreads.com/book/show/3508464-c-primer-plus",
+    "Unix Primer Plus": "https://archive.org/details/unixprimerplus0000prat",
+    "Advanced Unix Programmers Guide": "https://archive.org/details/advancedunixprog00peek",
+    "Assembly Language Primer for IBM": "https://openlibrary.org/books/OL24589724M/Assembly_Language_Primer_for_the_IBM_Personal_Computer",
+    "Fortran Primer Plus": "https://openlibrary.org/books/OL23276478M/Fortran_Primer_Plus",
+    "Objective-C Primer Plus": "https://openlibrary.org/books/OL23276243M/Objective-C_Primer_Plus",
+    "C Primer Plus (Waite Group)": "https://archive.org/details/cprimerplus0000prat",
+
+    "A Book on C (4th Edition)": "https://www.amazon.com/Book-C-Programming-Programming-Languages/dp/0201183994",
+    "A Book on C (3rd Edition)": "https://archive.org/details/bookoncintroto00kell",
+    "C by Example": "https://archive.org/details/cbyexample0000unks",
+    "C++ by Example": "https://www.goodreads.com/book/show/692242.C_By_Example",
+    "Turbo C: Essentials": "https://openlibrary.org/books/OL14243284M/Turbo_C",
+    "OOP Using C++": "https://www.goodreads.com/book/show/386851.OOP_Using_C",
+    "C++ for C Programmers": "https://www.amazon.com/C-Programmers-Third-13-07-1991-Kelley/dp/B01FIX8QVA",
+    "Java for C/C++ Programmers": "https://www.goodreads.com/book/show/2497834.Java_for_C_C_Programmers",
+    "SOA Modeling": "https://www.amazon.com/SOA-Modeling-Service-Oriented-Analysis-Design/dp/0138156751",
+    "Thinking About C++": "https://www.goodreads.com/book/show/6184163-thinking-about-c",
+
+    "Let Us C": "https://www.amazon.com/Let-Us-C-Yashavant-Kanetkar/dp/8183331637",
+    "Let Us C++": "https://www.amazon.com/Let-Us-C-Yashavant-Kanetkar/dp/8183331637",
+    "Let Us Java": "https://www.bpbonline.com/products/let-us-java",
+    "Data Structures Through C": "https://www.amazon.com/Data-Structures-Through-Yashavant-Kanetkar/dp/8183331157",
+    "Understanding Pointers in C": "https://www.amazon.com/Understanding-Pointers-Yashavant-Kanetkar/dp/8183331467",
+    "Test Your C Skills": "https://www.amazon.com/Test-Your-C-Skills-Kanetkar/dp/8183331491",
+    "Grasping C Pointers": "https://bpbonline.com/products/grasping-c-pointers",
+    "Data Structures Through C++": "https://www.amazon.com/Data-Structures-Through-Yashavant-Kanetkar/dp/8183333176",
+    "Working With C": "https://www.goodreads.com/book/show/3566526-working-with-c",
+    "Unix Shell Programming": "https://www.amazon.com/Unix-Shell-Programming-Yashavant-Kanetkar/dp/8183333788"
+   
+};
 
 /* ======================================================
-     ***   C LANGUAGE FEATURE — FULLY MERGED   ***
+                C LANGUAGE FEATURE  
    ====================================================== */
 
 const cAuthors = [
-  {
+     {
     name: "Brian Kernighan & Dennis Ritchie",
     books: [
       "The C Programming Language, 1st Edition (1978)",
@@ -258,7 +312,7 @@ const cAuthors = [
     ]
   }
 ];
-
+   
 // OPEN C LANGUAGE PAGE
 const openCLanguage = document.getElementById("openCLanguage");
 if (openCLanguage) {
@@ -283,25 +337,30 @@ function loadAuthors() {
     });
 }
 
-// LOAD BOOKS OF SELECTED AUTHOR
+// LOAD BOOKS
 function loadBooks(index) {
     const author = cAuthors[index];
-
-    document.getElementById("authorNameTitle").innerText = author.name;
+ document.getElementById("authorNameTitle").innerText = author.name;
 
     let container = document.getElementById("booksContainer");
     container.innerHTML = "";
 
     author.books.forEach(book => {
         let li = document.createElement("li");
-        li.innerText = book;
+        let a = document.createElement("a");
+
+        a.href = bookLinks[book] || "#";
+        a.target = "_blank";
+        a.textContent = book;
+
+        li.appendChild(a);
         container.appendChild(li);
     });
 
     switchTo("authorBooks");
 }
 
-// BACK BUTTON (already exists but we ensure hook)
+// BACK BUTTON
 const backToAuthors = document.getElementById("backToAuthors");
 if (backToAuthors) {
     backToAuthors.addEventListener("click", () => switchTo("cLanguage"));
@@ -316,6 +375,7 @@ function initializeApp() {
     renderLists();
 
     pages.forEach(p => p.classList.remove('active'));
+
     if (loginPage) loginPage.classList.add('active');
     if (appContainer) appContainer.classList.add('hidden-app');
 }

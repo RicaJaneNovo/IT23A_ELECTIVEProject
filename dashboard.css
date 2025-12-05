@@ -55,8 +55,8 @@ body {
 
 /* LOGO CLARITY ENHANCEMENT */
 .logo-img {
-    width: 60px; 
-    height: 50px; 
+  width: 100px;    /* bigger */
+    height: 90px; 
     border-radius: 60%; 
     object-fit: cover;
     border: 3px solid var(--accent); 
